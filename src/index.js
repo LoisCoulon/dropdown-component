@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Dropdown from "./lib/Dropdown";
+import Dropdown from "./lib/components/Dropdown";
 import "./main.scss";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
