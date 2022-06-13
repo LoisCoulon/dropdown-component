@@ -1,6 +1,7 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import "../main.scss";
 
-function Dropdown({ options, defaultOption }) {
+function Dropdown({ options, defaultOption, style, onChange }) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
 
@@ -8,12 +9,12 @@ function Dropdown({ options, defaultOption }) {
 
   const onOptionClicked = (value) => () => {
     setSelectedOption(value);
+    onChange = value;
     setIsOpen(false);
-    console.log(selectedOption);
   };
 
   return (
-    <div className="dropdown">
+    <div className="dropdown" style={style}>
       <div className="dropdown--header" onClick={toggling}>
         {selectedOption || defaultOption}
       </div>
@@ -21,8 +22,8 @@ function Dropdown({ options, defaultOption }) {
         <div className="dropdown--select">
           <ul>
             {options.map((option) => (
-              <li onClick={onOptionClicked(option)} key={Math.random()}>
-                {option}
+              <li onClick={onOptionClicked(option.name)} key={option.key}>
+                {option.name}
               </li>
             ))}
           </ul>
