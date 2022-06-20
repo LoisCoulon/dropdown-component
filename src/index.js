@@ -16,12 +16,16 @@ const options = [
   },
 ];
 
+const onChange = (value) => {
+  return console.log(value);
+};
+
 root.render(
   <React.StrictMode>
     <Dropdown
       options={options}
       defaultOption="Veuillez choisir un fruit"
-      onChange={""}
+      onChange={onChange}
     ></Dropdown>
   </React.StrictMode>
 );

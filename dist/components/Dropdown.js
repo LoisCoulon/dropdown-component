@@ -18,7 +18,6 @@ require("../main.scss");
 function Dropdown(_ref) {
   var options = _ref.options,
       defaultOption = _ref.defaultOption,
-      style = _ref.style,
       onChange = _ref.onChange;
 
   var _useState = (0, _react.useState)(false),
@@ -38,14 +37,13 @@ function Dropdown(_ref) {
   var onOptionClicked = function onOptionClicked(value) {
     return function () {
       setSelectedOption(value);
-      onChange = value;
+      onChange(value);
       setIsOpen(false);
     };
   };
 
   return /*#__PURE__*/_react.default.createElement("div", {
-    className: "dropdown",
-    style: style
+    className: "dropdown"
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "dropdown--header",
     onClick: toggling

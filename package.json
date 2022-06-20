@@ -1,6 +1,6 @@
 {
   "name": "my-dropdown-lib",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "author": "Loïs",
   "description": "A simple selectionable dropdown component in React",
   "keywords": [
@@ -28,8 +28,8 @@
     "@babel/core": "^7.18.5",
     "@babel/preset-react": "^7.17.12",
     "babel-cli": "^6.26.0",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1",
     "rimraf": "^3.0.2"
   },
@@ -60,6 +60,7 @@
     "url": "https://github.com/LoisCoulon/dropdown-component.git"
   },
   "dependencies": {
+    "prop-types": "^15.8.1",
     "sass": "^1.52.3"
   }
 }

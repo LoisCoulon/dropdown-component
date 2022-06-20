@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "../main.scss";
+import PropTypes from "prop-types";
 
-function Dropdown({ options, defaultOption, style, onChange }) {
+function Dropdown({ options, defaultOption, onChange }) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
 
@@ -9,12 +10,12 @@ function Dropdown({ options, defaultOption, style, onChange }) {
 
   const onOptionClicked = (value) => () => {
     setSelectedOption(value);
-    onChange = value;
+    onChange(value);
     setIsOpen(false);
   };
 
   return (
-    <div className="dropdown" style={style}>
+    <div className="dropdown">
       <div className="dropdown--header" onClick={toggling}>
         {selectedOption || defaultOption}
       </div>
@@ -32,5 +33,11 @@ function Dropdown({ options, defaultOption, style, onChange }) {
     </div>
   );
 }
+
+Dropdown.propTypes = {
+  options: PropTypes.array,
+  defaultOption: PropTypes.string,
+  onChange: PropTypes.func,
+};
 
 export default Dropdown;
