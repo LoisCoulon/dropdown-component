@@ -29,10 +29,20 @@ function Dropdown(_ref) {
       _useState4 = (0, _slicedToArray2.default)(_useState3, 2),
       selectedOption = _useState4[0],
       setSelectedOption = _useState4[1];
+  /**
+   * Open and close the dropdown element
+   */
+
 
   var toggling = function toggling() {
     return setIsOpen(!isOpen);
   };
+  /**
+   * Copy the option clicked in the dropdown header, call the custom onChange function and close the dropdown body
+   * @param {string} value - The option clicked
+   * @returns
+   */
+
 
   var onOptionClicked = function onOptionClicked(value) {
     return function () {

@@ -6,8 +6,16 @@ function Dropdown({ options, defaultOption, onChange }) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
 
+  /**
+   * Open and close the dropdown element
+   */
   const toggling = () => setIsOpen(!isOpen);
 
+  /**
+   * Copy the option clicked in the dropdown header, call the custom onChange function and close the dropdown body
+   * @param {string} value - The option clicked
+   * @returns
+   */
   const onOptionClicked = (value) => () => {
     setSelectedOption(value);
     onChange(value);

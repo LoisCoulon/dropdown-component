@@ -14,17 +14,25 @@ const options = [
     name: "banana",
     key: "ban",
   },
+  {
+    name: "apple",
+    key: "app",
+  },
+  {
+    name: "orange",
+    key: "ora",
+  },
 ];
 
 const onChange = (value) => {
-  return console.log(value);
+  return alert(value + " added to cart");
 };
 
 root.render(
   <React.StrictMode>
     <Dropdown
       options={options}
-      defaultOption="Veuillez choisir un fruit"
+      defaultOption="Please select a fruit"
       onChange={onChange}
     ></Dropdown>
   </React.StrictMode>
